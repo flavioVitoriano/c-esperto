@@ -1,0 +1,38 @@
+POST /chat
+
+REQUEST {
+ id: int,
+ hash_id: str,
+ name: str,
+ files: List[File]
+}
+
+----
+
+GET /chat/by_uuid/{hash} ->
+
+RESPONSE {
+ id: int,
+ uuid: str,
+ name: str,
+ files: List[File]
+}
+
+----
+
+POST /chat/{id}/ask ->
+
+REQUEST {
+ question: str
+}
+
+RESPONSE {
+ answer: str
+}
+
+-----
+
+DELETE /chat/{id} ->
+
+NO REQUEST AND RESPONSE
+
